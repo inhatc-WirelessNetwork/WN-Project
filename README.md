@@ -10,5 +10,7 @@
                온도 감지 센서를 사용해 차량의 온도가 일정 온도에 도달할 경우 어플 제작 해서 알람을 보내준다.  
                구현 가능 여부는 아직 확인 못했지만 카메라를 사용해 실시간으로 차량 내부를 볼 수 있는 기능 고려  
                알람은 Firebase의 Cloud Messaging 사용  
-               관련 링크: https://blog.naver.com/PostView.naver?blogId=ittalentdonation&logNo=222964848174  
-                          https://www.eswcontest.or.kr/data/award.php?ptype=view&idx=1878&page=3&code=award
+               관련 링크
+               1. 라즈베리파이-Firebase의 Messaging : https://blog.naver.com/PostView.naver?blogId=ittalentdonation&logNo=222964848174  
+               2. 구현 예제 : https://www.eswcontest.or.kr/data/award.php?ptype=view&idx=1878&page=3&code=award  
+               3. 라즈베리파이 카메라 : https://rudyprogramming.tistory.com/73
