@@ -24,9 +24,9 @@
                온도 감지 센서를 사용해 차량의 온도가 일정 온도에 도달할 경우 텔레그램으로 알람을 보내준다.      
                카메라를 사용해 실시간으로 차량 내부를 볼 수 있는 기능 구현 
                스트리밍 방식으로는 RSTP 프로토콜 사용 예정  
-               구현 가능 여부 확인 및 팀원간 협의 후 안드로이드 어플 제작 시 결정시
-               스트리밍엔 안드로이드에서 WebView 사용 예정  
-               알람은 Firebase의 Cloud Messaging 사용  
+               구현 가능 여부 확인 및 팀원간 협의 후 안드로이드 어플 제작 시 결정시  
+               스트리밍엔 안드로이드에서 WebView 사용 예정    
+               알람은 Firebase의 Cloud Messaging 사용    
                관련 링크  
                1. 라즈베리파이-Firebase의 Messaging : https://blog.naver.com/PostView.naver?blogId=ittalentdonation&logNo=222964848174  
                2. 구현 예제 : https://www.eswcontest.or.kr/data/award.php?ptype=view&idx=1878&page=3&code=award  
