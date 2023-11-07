@@ -21,13 +21,16 @@
 
 ### 정찬호 ✅
 **걱정 말개** : 여름이나 날씨가 높을 때 차량에 강아지를 두고 내리는 것은 강아지에게 매우 위험한 행동입니다.    
-               온도 감지 센서를 사용해 차량의 온도가 일정 온도에 도달할 경우 어플 제작 해서 알람을 보내준다. (!어플 제작은 협의!)   
-               구현 가능 여부는 아직 확인 못했지만 카메라를 사용해 실시간으로 차량 내부를 볼 수 있는 기능 고려  
+               온도 감지 센서를 사용해 차량의 온도가 일정 온도에 도달할 경우 텔레그램으로 알람을 보내준다.      
+               카메라를 사용해 실시간으로 차량 내부를 볼 수 있는 기능 구현 
+               스트리밍 방식으로는 RSTP 프로토콜 사용 예정
+               협의 후 안드로이드 어플 제작 시 안드로이드에서 WebView 사용 예정
                알람은 Firebase의 Cloud Messaging 사용  
                관련 링크  
                1. 라즈베리파이-Firebase의 Messaging : https://blog.naver.com/PostView.naver?blogId=ittalentdonation&logNo=222964848174  
                2. 구현 예제 : https://www.eswcontest.or.kr/data/award.php?ptype=view&idx=1878&page=3&code=award  
-               3. 라즈베리파이 카메라 : https://rudyprogramming.tistory.com/73
+               3. 라즈베리파이 카메라 : https://rudyprogramming.tistory.com/73  
+               4. 스트리밍 관련 예제 : https://remnant24c.tistory.com/357
 
 <br>
 
