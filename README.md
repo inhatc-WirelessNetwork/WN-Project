@@ -1,7 +1,12 @@
 # Raspberry Pi를 활용한 거북목 증후군, 척추측만증 예방 프로젝트: <br> 너 자세가 왜그래? 🤷
 
 #### 팀원: 박인수, 정상윤, 정찬호, 한소희, 한우빈
-
+<div>
+  <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
+  <img src="https://img.shields.io/badge/arduino-00878F?style=for-the-badge&logo=arduino&logoColor=white">
+  <img src="https://img.shields.io/badge/Raspberry Pi-3776AB?style=for-the-badge&logo=Raspberry Pi&logoColor=white">
+  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white">
+</div>
 <br>
 
 ## ☑️ 프로젝트 목적 
@@ -31,13 +36,13 @@
 
 <b> 1. 척추측만증 예방 모드와 거북목 증후군 예방 모드 중 선택하기 </b>
 
-사용자가 원하는 모드를 선택할 수 있어요.
+사용자가 원하는 모드를 선택할 수 있습니다.
 
 <hr>
 
 <b> 2. 척추측만증 예방 모드 </b>
 
-압력센서를 이용하여 척추측만증 유발 자세인 다리 꼬는 습관을 예방해요.
+압력센서를 이용하여 척추측만증 유발 자세인 다리 꼬는 습관을 예방합니다.
 
 ![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/90045a82-34c4-4ec5-bbf7-b2023da7a860)
 
@@ -91,15 +96,17 @@
 
 정면을 바라보고 있을 경우에는 사용자의 어깨 중심과 턱 좌표의 거리를 재서 거리가 짧아지면 거북목으로 구분하여 사용자에게 거북목 의심 메시지를 텔레그램을 통해 보내줍니다. 
 
-<정면 측정 기준>
-바르게 앉아있는것 기준으로 합니다. [바르게 앉는법 미국 스포츠 의학 아카데미(NASM)](https://ko.wikihow.com/%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%95%89%EB%8A%94-%EB%B2%95)
-1. 의자에 앉을때 엉덩이를 최대한 뒤로 붙인다.
-2. 어깨를 펴고 등을 곧게 한다.
-3. 의자 높이를 몸에 맞게 조절한다.
-4. 기댔을 때 각도가 100°-110° 정도로 등받이를 조절한다.
-5. 팔걸이는 어깨에 무리가 가지 않고, 타이핑 할 때 손목이 키보드의 높이와 맞는 상태가 가장 이상적이다.
-
-위 처럼 앉았을때 거리를 기준으로 사용자의 어깨 중심과 턱 좌표 거리가 상대적으로 짧아지면 거북목으로 구분합니다.
+<정면 측정 기준><br>
+바르게 앉아있는것 기준으로 합니다.
+1. 의자에 앉을때 엉덩이를 최대한 뒤로 붙입니다.
+2. 어깨를 펴고 등을 곧게 합니다.
+3. 의자 높이를 몸에 맞게 조절합니다.
+4. 기댔을 때 각도가 100°-110° 정도로 등받이를 조절합니다.
+5. 팔걸이는 어깨에 무리가 가지 않고, 타이핑 할 때 손목이 키보드의 높이와 맞는 상태가 가장 이상적입니다.
+<br>
+위 처럼 앉았을때 거리를 기준으로 사용자의 어깨 중심과 턱의 거리가 상대적으로 짧아지면 거북목으로 구분합니다.
+<br>
+<a href = "https://ko.wikihow.com/%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%95%89%EB%8A%94-%EB%B2%95">출처 : 바르게 앉는법 미국 스포츠 의학 아카데미(NASM)</a>
 <hr>
 
 ## 🧑‍🤝‍🧑 역할 분담
