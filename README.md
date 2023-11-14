@@ -1,6 +1,14 @@
 # Raspberry Pi를 활용한 거북목 증후군, 척추측만증 예방 프로젝트: <br> 너 자세가 왜그래? 🤷
 
-#### 팀원: 박인수, 정상윤, 정찬호, 한소희, 한우빈
+#### 🧑‍🤝‍🧑 팀원
+<li> 박인수: <a href="https://github.com/Ninesoo-shot"> Ninesoo-shot </a> </li>
+<li> 정상윤: <a href="https://github.com/JSangYun2"> JSangYun2t </a> </li>
+<li> 정찬호: <a href="https://github.com/chanho0908"> chanho0908 </a> </li>
+<li> 한소희: <a href="https://github.com/haansohee"> haansohee </a> </li>
+<li> 한우빈: <a href="https://github.com/Hanwoobin"> Hanwoobin </a> </li>
+
+<br><br>
+            
 <div>
   <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
   <img src="https://img.shields.io/badge/arduino-00878F?style=for-the-badge&logo=arduino&logoColor=white">
@@ -18,11 +26,11 @@
 <br>
 
 ## ☑️ 필요 물품
-<li> Raspberry Pi </li>
+<li> Raspberry Pi 4 </li>
 <li> Arduino Uno </li>
-<li> 라즈베리파이 카메라모듈 V2 </li>
-<li> 라즈베리파이 카메라용 아크릴 거치대 케이스 </li>
-<li> 압력센서 FSR 406 Solder Tabs </li>
+<li> Arduino Uno 브레드보드 </li>
+<li> Web Cam: ENTUS WC33 Full HD 360  </li>
+<li> 압력센서 FSR 406 Solder Tabs 8개 : <a href="https://www.devicemart.co.kr/goods/view?no=33868"> 구매처 </a> </li>
 
 <br>
 
