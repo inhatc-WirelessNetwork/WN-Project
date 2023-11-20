@@ -126,6 +126,9 @@
 <li> 정상윤, 정찬호: 압력센서를 이용하여 척추측만증 유발 자세인 다리 꼬는 자세 판별 </li>
 
 <li> 정찬호: 텔레그램 API 연동 </li>
+<hr>
 
+## 데이터 흐름도
+![흐름도](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/d9e9ea9f-01cc-48e9-befe-0be7c7f1ccbb)
 
 
