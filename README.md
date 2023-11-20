@@ -112,7 +112,7 @@
 4. 기댔을 때 각도가 100°-110° 정도로 등받이를 조절합니다.
 5. 팔걸이는 어깨에 무리가 가지 않고, 타이핑 할 때 손목이 키보드의 높이와 맞는 상태가 가장 이상적입니다.
 <br>
-위 처럼 앉았을때 거리를 기준으로 사용자의 어깨 중심과 턱의 거리가 상대적으로 짧아지면 거북목으로 구분합니다.
+위 처럼 앉았을때 거리를 기준으로 사용자의 턱과 어깨 중심의 거리가 상대적으로 짧아지면 거북목으로 구분합니다.
 <br>
 <a href = "https://ko.wikihow.com/%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%95%89%EB%8A%94-%EB%B2%95">출처 : 바르게 앉는법 미국 스포츠 의학 아카데미(NASM)</a>
 <hr>
@@ -129,9 +129,32 @@
 <hr>
 
 ## 데이터 흐름도
-![거북목_수정](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/c23f9500-08d5-4521-b4b4-3378ce570420)
-![척추측만증_수정](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/aa545680-d11e-47da-adaf-ca4b657e5e40)
+### 거북목 흐름도
+![거북목원본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/50b6de8d-46a2-46b1-8e2b-a51c685e55cc)
+<br>
 
+### 척추측만증 흐름도
+![척추원본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/ae54a39d-4ca4-43ee-bf85-97b8b8c10eac)
 <hr>
 
 ## 진행 사항
+### 거북목 증후군 판단
+[카메라 정면 기준]
+<정면 측정 기준>을 토대로 앉았을때
+
+![정상목예시](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/b83468dc-5cc9-4f99-ba09-07bbafa87fb2)
+
+<br>
+
+정상 = 거북목이 아니라고 판단하여 화면에 아무것도 출력되지않습니다.
+
+<br>
+
+![거북목예시](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/cbe5ec3b-ad1d-4af8-a148-1df3451380f6)
+
+<br>
+
+비정상 = 턱과 어깨 중심의 거리가 170픽셀 이하일때 거북목으로 판단하고 화면에 "turtle neck" 이라고 출력해줍니다. (임시 기준)
+
+<br>
+
