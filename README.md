@@ -15,6 +15,7 @@
   <img src="https://img.shields.io/badge/Raspberry Pi-3776AB?style=for-the-badge&logo=Raspberry Pi&logoColor=white">
   <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white">
 </div>
+
 <br>
 
 ## ☑️ 프로젝트 목적 
@@ -37,6 +38,7 @@
 ## ☑️ 사용 파이썬 프레임워크&라이브러리
 <li> Telegram APIs </li>
 <li> MediaPipe </li>
+<li> OpenCV </li>
 
 <br>
 
@@ -128,7 +130,8 @@
 <li> 정찬호: 텔레그램 API 연동 </li>
 <hr>
 
-## 데이터 흐름도
+## 시스템 흐름도
+
 ### 거북목 흐름도
 ![거북목원본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/50b6de8d-46a2-46b1-8e2b-a51c685e55cc)
 <br>
@@ -138,29 +141,36 @@
 <hr>
 
 ## 진행 사항
-### 거북목 증후군 판단
-[카메라 정면 기준]
-<정면 측정 기준>을 토대로 앉았을때
 
-![정상목예시](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/b83468dc-5cc9-4f99-ba09-07bbafa87fb2)
+## 진행 사항
 
-<br>
+### (1) 파이썬 프레임워크&라이브러리 설치
 
-정상 = 거북목이 아니라고 판단하여 화면에 아무것도 출력되지않습니다.
+✅ Python 3.9
 
-<br>
+🔺 OepnCV 4.8.1 (opencv_contrib은 아직 미설치)
 
-![거북목예시](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/cbe5ec3b-ad1d-4af8-a148-1df3451380f6)
+❌ Mediapipe (미디어파이프 설치 안되면 Python 버전 3.7로 변경)
 
 <br>
 
-비정상 = 턱과 어깨 중심의 거리가 170픽셀 이하일때 거북목으로 판단하고 화면에 "turtle neck" 이라고 출력해줍니다. (임시 기준)
+### (2) 카메라 속 사람의 얼굴 정면, 좌우 방향 인식 
+
+~~(사진 업로드해야 함)~~
 
 <br>
 
-<hr>
+### (3) 거북목 증후군 모드의 정면 1차 테스트
 
-### 척추측만증 자세 판단
+|정상 자세|거북목 증후군 자세|
+|------|--------------|
+|![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/3ca81844-833c-453c-9de3-59fb507230a9)|![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/305ee288-f2bf-4fcb-8ebb-1b6199f3f3ca)|
+|거북목이 아니라고 판단하여 화면에 아무것도 출력되지않습니다.|턱과 어깨 중심의 거리가 170픽셀 이하일때 거북목으로 판단하고 화면에 "turtle neck" 이라고 출력해줍니다. (임시 기준)|
+
+<br>
+
+
+### (4) 척추측만증 모드의 압력 센서: 팅커 패드를 활용하여 임시 회로도 작성
 
 <br>
 
