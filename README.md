@@ -30,7 +30,7 @@
 <li> Arduino Uno </li>
 <li> Arduino Uno 브레드보드 </li>
 <li> Web Cam: ENTUS WC33 Full HD 360  </li>
-<li> 압력센서 FSR 406 Solder Tabs 8개 : <a href="https://www.devicemart.co.kr/goods/view?no=33868"> 구매처 </a> </li>
+<li> 압력센서 FSR 406 Solder Tabs 8개 -> 6개: <a href="https://www.devicemart.co.kr/goods/view?no=33868"> 구매처 </a> </li> 
 
 <br>
 
