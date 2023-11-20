@@ -158,3 +158,18 @@
 
 <br>
 
+<hr>
+
+### 척추측만증 자세 판단
+
+<br>
+
+<b> <아두이노 회로도> </b>
+
+<br>
+
+☑️ 시리얼 모니터 출력확인
+
+<br>
+
+![WLAN_ARD](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/116622873/4dc3a530-fadf-4f51-a67f-315756f23cd9)
