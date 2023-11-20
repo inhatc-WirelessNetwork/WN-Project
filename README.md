@@ -132,17 +132,16 @@
 
 ## 시스템 흐름도
 
-### 거북목 흐름도
+### 거북목 모드 흐름도
 ![거북목원본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/50b6de8d-46a2-46b1-8e2b-a51c685e55cc)
 <br>
 
-### 척추측만증 흐름도
+### 척추측만증 모드 흐름도
 ![척추원본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/ae54a39d-4ca4-43ee-bf85-97b8b8c10eac)
+
 <hr>
 
-## 진행 사항
-
-## 진행 사항
+# 진행 사항
 
 ### (1) 파이썬 프레임워크&라이브러리 설치
 
