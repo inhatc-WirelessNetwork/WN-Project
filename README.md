@@ -129,6 +129,9 @@
 <hr>
 
 ## 데이터 흐름도
-![흐름도](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/d9e9ea9f-01cc-48e9-befe-0be7c7f1ccbb)
+![거북목_수정](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/c23f9500-08d5-4521-b4b4-3378ce570420)
+![척추측만증_수정](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/aa545680-d11e-47da-adaf-ca4b657e5e40)
 
+<hr>
 
+## 진행 사항
