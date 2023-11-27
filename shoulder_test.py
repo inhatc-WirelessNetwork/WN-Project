@@ -27,10 +27,32 @@ while cap.isOpened():
         left_shoulder_x, left_shoulder_y = int(left_shoulder.x * w), int(left_shoulder.y * h)
         right_shoulder_x, right_shoulder_y = int(right_shoulder.x * w), int(right_shoulder.y * h)
 
-        # 어깨 좌표에 점 그리기
+        # 어깨 좌표에 원 그리기
         cv2.circle(frame, (left_shoulder_x, left_shoulder_y), 5, (0, 255, 0), -1)
         cv2.circle(frame, (right_shoulder_x, right_shoulder_y), 5, (0, 255, 0), -1)
 
+        # 어깨 간의 선 그리기
+        cv2.line(frame, (left_shoulder_x, left_shoulder_y), (right_shoulder_x, right_shoulder_y), (0, 255, 0), 2)
+
+        # 어깨 간의 기울기 계산
+        slope = (right_shoulder_y - left_shoulder_y) / (right_shoulder_x - left_shoulder_x)
+        #한쪽 팔거치대에 과하게 중심이 쏠렸을때 기울기가 0.1정도였음 (10번중에 7번이상)
+        if slope < 0 :
+            #-0.1의 기울기도 있어서 계산하기 쉽게 음수를 양수로 변환작업
+            slope = slope * -1
+
+        if slope >=0.10:
+            #텔레그램 전송
+            temp=0
+            cv2.putText(frame, f"dangerous: {slope:.2f}", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+                
+
+            
+
+        # 결과 출력
+        cv2.putText(frame, f"Slope: {slope:.2f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+
+    # 얼굴 감지 결과를 화면에 출력
     cv2.imshow('Pose Estimation', frame)
 
     if cv2.waitKey(1) & 0xFF == 27:  # 'Esc' 키로 종료
