@@ -63,7 +63,11 @@
  
  <br>
  
- 추가로 양 발밑에도 압력센서를 부착하여 일정 비율 이상 압력이 발에 가해지게 되면, 자리에서 일어나는 것으로 판단하여 둔근 사이에 압력 차이가 생겨도 라즈베리파이에서 메시지를 보내지 않습니다.
+ ~~추가로 양 발밑에도 압력센서를 부착하여 일정 비율 이상 압력이 발에 가해지게 되면, 자리에서 일어나는 것으로 판단하여 둔근 사이에 압력 차이가 생겨도 라즈베리파이에서 메시지를 보내지 않습니다.~~
+ <br><br>
+ **🔵압력 센서 2개는 척추 양쪽 기립근(해당 그림) 쪽에 부착하여 허리가 굽어지는 것을 감지해 메시지를 전달 하는 것으로 변경 되었습니다.**
+ <br><br>
+ ![aaad](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/116622873/cbb2d1c0-8f0e-4d07-9126-508cd2202ba0) 
 
  <hr>
 
@@ -184,3 +188,37 @@
 <br>
 
 ![WLAN_ARD](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/116622873/4dc3a530-fadf-4f51-a67f-315756f23cd9)
+
+<b> ※ 센서 부착 위치 </b>
+<br> <br>
+![의자](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/116622873/ad96e220-b6dd-43ab-8dcd-8a57d1751065)
+
+<br>
+
+### 임시 테스트 결과 (추후 텔레그램 메시지 전송으로 변경 예정)
+
+<br>
+
+<b> (1) 정상 자세 </b>
+
+<br> 
+
+![정상](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/116622873/c7abd776-7e7a-4699-8994-24f7a463d22d)
+
+<br>
+
+<b> (2) 다리 꼰 상태 </b>
+
+<br>
+
+![왼쪽 다리 꼰 상태](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/116622873/c3860f47-4007-4e58-aab5-8bdab48a48b2)
+
+<br>
+
+<b> (3) 다리 꼬기 && 허리 굽어진 상태 </b>
+
+<br>
+
+![허리 굽히고 다리 꼰상태](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/116622873/cc36fa61-f2fd-4391-9fc4-a8b55bb6d4c2)
+
+<br>
