@@ -145,24 +145,33 @@
 
 # 진행 사항
 
+## Raspberry Pi
+
 ### (1) 파이썬 프레임워크&라이브러리 설치
 
 ✅ Python 3.9
 
 ✅ OepnCV 4.8.1 (opencv_contrib 4.8.1)
 
-❌ Mediapipe (미디어파이프 설치 안되면 Python 버전 3.7로 변경)
+✅ Mediapipe 0.8.10
 
 <br>
 
-### (2) 카메라 속 사람의 좌우 방향 인식 
+### (2) 카메라 속 사람의 머리 방향과 외이도에서 내린 수직선과 어깨 사이의 각도 측정
+삼각대 위에 웹캠을 설치한 후 진행하였습니다.
 
-~~(사진 업로드해야 함)~~
+|정상 자세|거북목 자세|
+|-------|--------|
+|![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/d030d200-ecc5-401e-b186-a10a0039b3f0)|![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/d40f3a2c-8616-4347-b669-07b74d702fed)|
+
+거북목 자세의 경우 각도가 70도 이하로 떨어지는 것을 확인할 수 있습니다.
+
 
 <br>
 
 
-### (3) 척추측만증 모드의 압력 센서: 팅커 패드를 활용하여 임시 연결도 작성
+## Arduino
+### (1) 척추측만증 모드의 압력 센서: 팅커 패드를 활용하여 임시 연결도 작성
 
 <br>
 
