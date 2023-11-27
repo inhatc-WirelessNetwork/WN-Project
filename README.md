@@ -135,7 +135,7 @@
 ## 시스템 흐름도
 
 ### 거북목 모드 흐름도
-![거북목원본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/50b6de8d-46a2-46b1-8e2b-a51c685e55cc)
+![거북목측정 수정본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/a2f31762-62e6-4054-bbc0-d568c9bba4aa)
 <br>
 
 ### 척추측만증 모드 흐름도
