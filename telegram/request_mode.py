@@ -8,6 +8,7 @@ import asyncio
 import cv2
 import threading
 import time
+import serial
 
 stop_event = threading.Event()
 stop_event.clear()
@@ -89,11 +90,11 @@ async def test(update):
                         (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 4)
 
             if degree < 70 and time.time() - last_message_time >= 5:
-                await update.effective_message.reply_text('거북')
+                await update.effective_message.reply_text('거북목 주의')
                 last_message_time = time.time()
 
             else:
-                print('ㄱㅓ북ㄴ')
+                print('정상')
 
 
         cv2.imshow('Webcam Pose Estimation', frame)
@@ -107,9 +108,26 @@ async def test(update):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("모드를 선택해 주세요 :)\n 1. 거북목 모드 \n2. 척추측만증 모드")
 
-# /set 명령어를 통해 타이머를 설정하고, 설정한 시간이 경과하면 alarm 함수가 실행되도록 하는 기능을 제공
+async def start_mod2(update):
+    seri = serial.Serial('COM4', baudrate=9600, timeout=None)
+    while not stop_event.is_set():
+        time.sleep(1)
+        if seri.in_waiting != 0:
+            val1 = int(seri.readline().decode())
+            val2 = int(seri.readline().decode())
+
+            print("Value 1:", val1)
+            print("Value 2:", val2)
+
+            if val1 >= 400:
+                text = "다리 꼬지 마세요"
+                await update.effective_message.reply_text(text)
+
+            if val2 >= 800:
+                text = "허리 피세요"
+                await update.effective_message.reply_text(text)
+            
 async def set_mode(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Add a job to the queue."""
     try:
         due = float(context.args[0])
         if due == 1:
@@ -119,39 +137,51 @@ async def set_mode(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             stop_event.clear()
 
             loop = asyncio.get_event_loop()
-            # Schedule the test coroutine in the event loop
-            loop.call_soon_threadsafe(lambda: asyncio.ensure_future(test(update)))
-
+            loop.create_task(test(update))
 
             return
+
         elif due == 2:
             text = "척추측만증 모드 설정이 완료됐어요!"
             await update.effective_message.reply_text(text)
+
+            loop = asyncio.get_event_loop()
+            loop.create_task(start_mod2(update))
+
             return
         else:
             await update.message.reply_text("1 또는 2를 입력해주세요 :) ")
             return
 
     except (IndexError, ValueError):
-        await update.effective_message.reply_text("1 또는 2를 입력해주세요 :) ")
+        await update.effective_message.reply_text("오류발생")
 
 # /unset : 종료함수
-async def unset(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    print("unset")
+async def unset_turtle(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    print("unset_turtle")
     stop_event.set()
-    await update.message.reply_text("프로그램이 종료 되었습니다.")
-    if processing_thread:
-        processing_thread.join()
+    await update.message.reply_text("거북목 프로그램이 종료 되었습니다.")
+        
+async def unset_scoliosis(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    print("unset_scoliosis")
+    stop_event.set()
+    await update.message.reply_text("척추측만증 프로그램이 종료 되었습니다.")
 
 def main() -> None:
     """Run bot."""
     # Create the Application and pass it your bot's token.
-    application = Application.builder().token("6819441562:AAGTiWeoinUOE3W22M0L3R7u4CErKWSMzTw").build()
+    # 6339954049:AAEQDHDgbeklS3_Xeum0QwBIrPdjTulWg4M 인수 토큰
+    # 6819441562:AAGTiWeoinUOE3W22M0L3R7u4CErKWSMzTw 찬호 토큰
+    application = Application.builder().token("6339954049:AAEQDHDgbeklS3_Xeum0QwBIrPdjTulWg4M").build()
+
+    print('main start')
 
     # on different commands - answer in Telegram
     application.add_handler(CommandHandler(["start", "help"], start))
     application.add_handler(CommandHandler("set", set_mode))
-    application.add_handler(CommandHandler("unset", unset))
+    application.add_handler(CommandHandler("unset_turtle", unset_turtle))
+    application.add_handler(CommandHandler("unset_scoliosis", unset_scoliosis))
+    
     application.run_polling()
 
 if __name__ == "__main__":

@@ -24,8 +24,8 @@ void loop() {
   int mfsr_r18e = map(SensorReading5, 0, 1024, 0, 4095);
   int mfsr_r18f = map(SensorReading6, 0, 1024, 0, 4095);
 
-//  Serial.print("1st sensor(대퇴이두 (왼쪽)):");
-//  Serial.println(mfsr_r18a);
+// Serial.print("1st sensor(대퇴이두 (왼쪽)):");
+// Serial.println(mfsr_r18a);
 //  Serial.print("2nd sensor(대퇴이두 (오른쪽)):");
 //  Serial.println(mfsr_r18b);
 //  Serial.print("3rd (둔근(왼쪽)):");
@@ -38,7 +38,8 @@ void loop() {
 //  Serial.println(mfsr_r18f);
 
   int result1 = abs(mfsr_r18a - mfsr_r18b);  //result1 150이상 되면 메시지 전송
-  int result2 = mfsr_r18e + mfsr_18f;   // result2 값이 1000이상 되면 메시지 전송
+  int result2 = mfsr_r18e + mfsr_r18f;   // result2 값이 1000이상 되면 메시지 전송
+
 
   Serial.println(result1);
   Serial.println(result2);
@@ -54,5 +55,5 @@ void loop() {
     //Serial.println("허리 피세요!");
   //}
 
-  delay(5000);
+  delay(1000);
 }

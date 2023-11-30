@@ -38,7 +38,7 @@ void loop() {
 //  Serial.println(mfsr_r18f);
 
   int result1 = abs(mfsr_r18a - mfsr_r18b);  //result1 150이상 되면 메시지 전송
-  int result2 = mfsr_r18e + mfsr_18f;   // result2 값이 1000이상 되면 메시지 전송
+  int result2 = mfsr_r18e + mfsr_r18f;   // result2 값이 1000이상 되면 메시지 전송
 
   Serial.println(result1);
   Serial.println(result2);
@@ -54,5 +54,5 @@ void loop() {
     //Serial.println("허리 피세요!");
   //}
 
-  delay(5000);
+  delay(500);
 }
