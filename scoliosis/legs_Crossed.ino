@@ -25,8 +25,8 @@ void loop() {
   int mfsr_r18f = map(SensorReading6, 0, 1024, 0, 4095);
   // map 함수로 0~1024까지의 값을 0~4095 값으로 단계를 나눠 매핑
 
-  int result1 = abs(mfsr_r18a - mfsr_r18b);  //result1 = 양쪽 대퇴 이두쪽에 설치된 압력센서값의 차
-  int result2 = mfsr_r18e + mfsr_r18f;   // result2 = 기립근 쪽에 설치된 두 압력센서값의 합
+  int result1 = abs(mfsr_r18a - mfsr_r18b);  //result1 = 양쪽 대퇴 이두쪽에 설치된 압력센서값의 차 / request_mode.py 에서의 val1 값
+  int result2 = mfsr_r18e + mfsr_r18f;   // result2 = 기립근 쪽에 설치된 두 압력센서값의 합 / request_mode.py 에서의 val2 값
 
   Serial.println(result1);
   Serial.println(result2);
