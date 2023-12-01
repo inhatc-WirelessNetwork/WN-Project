@@ -143,7 +143,7 @@
 <br>
 
 ### 척추측만증 모드 흐름도
-![척추원본](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/ae54a39d-4ca4-43ee-bf85-97b8b8c10eac)
+![척추측만증 측정방법](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/101787341/a93bfb23-c856-4d19-9359-eeee59925dcf)
 
 <hr>
 
