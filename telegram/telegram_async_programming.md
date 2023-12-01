@@ -1,4 +1,4 @@
-# 🎉 Telegram Async Process
+# 🎉 Telegram API Process
 > Telegram API 이해를 위한 문서 입니다.   
 
 ### 1️⃣ 기본 사용법     
@@ -35,6 +35,7 @@ updater.idle()
 |Update |텔레그램에서 오는 모든 업데이트(메시지, 채팅 상태 변경, 새로운 멤버 등)를 수신|
 |CommandHandler |텔레그램에서 오는 모든 업데이트(메시지, 채팅 상태 변경, 새로운 멤버 등)를 수신|
 |CallbackContext |이벤트 핸들러 함수에 CallbackContext를 사용하여 콜백 데이터를 전달<br>비동기 작업을 수행 후 작업이 완료시 작업의 결과를 통해 추가적인 동작을 수행|
+|dispatcher| EventListener 등록 / 호출하여 적절한 응답을 생성|
 
 ### 2️⃣ 비동기 프로그래밍
 > 파이썬에서 텔레그램 API를 사용하여 텔레그램에 메시지를 보낼 때 비동기로 작성해야 한다
