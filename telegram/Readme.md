@@ -251,7 +251,8 @@ if __name__ == "__main__":
 ```
 
 ### 4️⃣ Thread Process
-![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/84930748/69d8c563-dc10-4734-8562-53d19e0f73dc)
+![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/84930748/90f03e58-70ec-4b6c-9c25-d2a990339414)
+
 
 #### ✔ 초기 프로세스 구성
 * 사용자가 ```/start``` 명령어를 호출하면 사용자에게 mode를 선택을 요청하고      
@@ -268,8 +269,8 @@ if __name__ == "__main__":
 
 #### ✔ 프로세스 개선
 
-![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/84930748/47dcc10a-eaab-4819-81fa-b54f7485082b)
+![image](https://github.com/inhatc-WirelessNetwork/WN-Project/assets/84930748/c94d479d-b341-439f-94e4-b095ddde47ac)
 
-* ```[start_tutle, start_scoliosis]```을 동작할 스레드를 별도로 만들어 
+* ```[start_tutle, start_scoliosis]```을 동작할 스레드를 별도로 만들어   
   메인 스레드와 병렬로 동작하게 구성하면 ```/unset``` 으로 종료가 가능해집니다.
 
