@@ -9,6 +9,8 @@ import cv2
 import threading
 import time
 import serial
+from turtle_neck.calculate_degree import cal_degree
+import telegram_token
 
 stop_event = threading.Event()
 stop_event.clear()
@@ -16,15 +18,12 @@ processing_thread = None
 # 프로젝트 루트 디렉토리를 Python 경로에 추가
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
-from turtle_neck.face_right_left_test2 import degreetest
-
-
 # Enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
 
-async def test(update):
+async def turtle_mode(update):
     last_message_time = 0
     mp_pose = mp.solutions.pose
     mp_drawing = mp.solutions.drawing_utils
@@ -37,14 +36,10 @@ async def test(update):
         if not ret:
             continue
 
-        # 프레임을 RGB 형식으로 변환
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-        # 관절 추출
         results = pose.process(frame_rgb)
 
         if results.pose_landmarks:
-            # 머리의 위치 확인
             nose_x = results.pose_landmarks.landmark[mp_pose.PoseLandmark.NOSE].x
             left_eye_x = results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_EYE].x
             right_eye_x = results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_EYE].x
@@ -82,7 +77,7 @@ async def test(update):
             cv2.line(frame, (0, int(shoulder_landmark.y * frame.shape[0])),
                     (frame.shape[1], int(shoulder_landmark.y * frame.shape[0])), (0, 0, 255), 2)
             
-            degree = degreetest(direction_left, direction_right, shoulder_landmark, ear_landmark)
+            degree = cal_degree(direction_left, direction_right, shoulder_landmark, ear_landmark)
 
             # 각도를 화면에 표시
             cv2.putText(frame,
@@ -103,12 +98,8 @@ async def test(update):
             break
     cap.release()
     cv2.destroyAllWindows()
-            
-# /start 메시지 전송
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("모드를 선택해 주세요 :)\n 1. 거북목 모드 \n2. 척추측만증 모드")
 
-async def start_mod2(update):
+async def scoliosis_mode(update):
     seri = serial.Serial('COM4', baudrate=9600, timeout=None)
     while not stop_event.is_set():
         time.sleep(1)
@@ -116,8 +107,8 @@ async def start_mod2(update):
             val1 = int(seri.readline().decode())
             val2 = int(seri.readline().decode())
 
-            print("Value 1:", val1)
-            print("Value 2:", val2)
+            print("다리 측정", val1)
+            print("허리 측정", val2)
 
             if val1 >= 400:
                 text = "다리 꼬지 마세요"
@@ -126,27 +117,30 @@ async def start_mod2(update):
             if val2 >= 800:
                 text = "허리 피세요"
                 await update.effective_message.reply_text(text)
-            
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text("모드를 선택해 주세요 :)\n 1. 거북목 모드 \n2. 척추측만증 모드 \n 예시: /set 1")
+
 async def set_mode(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     try:
         due = float(context.args[0])
         if due == 1:
-            text = "거북목 모드 설정이 완료됐어요!"
+            text = "거북목 모드 설정이 완료됐어요! 사용을 중단하고 싶다면 /unset_turtle 을 입력하세요."
             await update.effective_message.reply_text(text)
 
             stop_event.clear()
 
             loop = asyncio.get_event_loop()
-            loop.create_task(test(update))
+            loop.create_task(turtle_mode(update))
 
             return
 
         elif due == 2:
-            text = "척추측만증 모드 설정이 완료됐어요!"
+            text = "척추측만증 모드 설정이 완료됐어요! 사용을 중단하고 싶다면 /unset_scoliosis 을 입력하세요."
             await update.effective_message.reply_text(text)
 
             loop = asyncio.get_event_loop()
-            loop.create_task(start_mod2(update))
+            loop.create_task(scoliosis_mode(update))
 
             return
         else:
@@ -154,29 +148,26 @@ async def set_mode(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             return
 
     except (IndexError, ValueError):
-        await update.effective_message.reply_text("오류발생")
+        print('Index ERROR:', IndexError)
+        print('Value ERROR: ', ValueError)
+        await update.effective_message.reply_text("오류가 발생하였습니다. 잠시후에 이용해 주세요.")
 
 # /unset : 종료함수
 async def unset_turtle(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print("unset_turtle")
     stop_event.set()
-    await update.message.reply_text("거북목 프로그램이 종료 되었습니다.")
+    await update.message.reply_text("거북목 프로그램이 종료되었습니다.")
         
 async def unset_scoliosis(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print("unset_scoliosis")
     stop_event.set()
-    await update.message.reply_text("척추측만증 프로그램이 종료 되었습니다.")
+    await update.message.reply_text("척추측만증 프로그램이 종료되었습니다.")
 
 def main() -> None:
-    """Run bot."""
-    # Create the Application and pass it your bot's token.
-    # 6339954049:AAEQDHDgbeklS3_Xeum0QwBIrPdjTulWg4M 인수 토큰
-    # 6819441562:AAGTiWeoinUOE3W22M0L3R7u4CErKWSMzTw 찬호 토큰
-    application = Application.builder().token("6339954049:AAEQDHDgbeklS3_Xeum0QwBIrPdjTulWg4M").build()
+    token = telegram_token.insoo_token
+    # token = telegram_token.chanho_token
+    application = Application.builder().token(token).build()
 
-    print('main start')
-
-    # on different commands - answer in Telegram
     application.add_handler(CommandHandler(["start", "help"], start))
     application.add_handler(CommandHandler("set", set_mode))
     application.add_handler(CommandHandler("unset_turtle", unset_turtle))
