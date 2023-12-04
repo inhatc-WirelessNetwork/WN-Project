@@ -227,8 +227,9 @@
 # 프로젝트 진행 결과
 
 <p align="center">
+
+<img width="600" alt="result" src="https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/25e175d8-c994-45b3-97b7-da4eba597fa0">
             
-<img width="641" alt="스크린샷 2023-12-04 오후 4 45 13" src="https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/8a6c5d0a-4175-4580-9cae-11991fba9b89">
 
 </p>
 
@@ -241,7 +242,7 @@
 
 <p align="center">
             
-<img width="603" alt="스크린샷 2023-12-04 오전 9 48 13" src="https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/2dc32e87-f9bc-4f95-a33d-4f51cd2d71b3">
+<img width="603" alt="result1" src="https://github.com/inhatc-WirelessNetwork/WN-Project/assets/90755590/2dc32e87-f9bc-4f95-a33d-4f51cd2d71b3">
 
 </p> 
 
